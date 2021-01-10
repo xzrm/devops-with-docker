@@ -1,0 +1,14 @@
+docker run -d  devopsdockeruh/heroku-example
+
+docker images
+#result
+devopsdockeruh/heroku-example           latest              5221e4b03bc7        14 months ago       1.17GB
+
+docker tag 5221e4b03bc7 registry.heroku.com/devops-maciej/web
+
+docker push registry.heroku.com/devops-maciej/web
+
+heroku container:release web -a devops-maciej
+
+link: 
+https://devops-maciej.herokuapp.com/

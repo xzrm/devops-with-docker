@@ -1,0 +1,5 @@
+#### to build an image
+docker build -t docker-clock .
+
+####to create and run a new container
+docker run docker-clock -c 

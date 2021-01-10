@@ -1,0 +1,4 @@
+docker build -t node-app-back .
+
+docker run -d -p 8000:8000 -v $(pwd)/logs.txt:/usr/src/app/logs.txt node-app-back
+

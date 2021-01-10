@@ -1,0 +1,7 @@
+
+###to build an image
+docker build -t curler .
+
+###to run container
+docker run -it curler bash local.sh
+

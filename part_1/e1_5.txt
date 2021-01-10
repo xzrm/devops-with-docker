@@ -1,0 +1,45 @@
+﻿#### In the first terminal:
+
+
+docker run -it --name ex1-5 ubuntu:16.04 sh -c 'echo "Input website: "; read website; echo "Searching.."; sleep 1; curl http://$website;'
+
+
+#### flag -it prevents from existing and in the screen there is:
+Input website:
+
+
+
+#### In the second terminal we check running container with
+docker container ls -a 
+
+CONTAINER ID        IMAGE               COMMAND                   CREATED             STATUS              PORTS               NAMES
+d2044faa2a8c        ubuntu:16.04        "sh -c 'echo \"Input …"   31 seconds ago      Up 29 seconds                           ex1-5
+
+#### we take container id to install cURL with
+
+
+docker exec d2044faa2a8c apt-get update
+docker exec d2044faa2a8c apt-get install -y curl wget 
+
+#### we proceed with the input in the first terminal
+
+helsinki.fi
+
+#### the output is:
+
+maciej@maciej-ubuntu:~$ docker run -it --name ex1-5 ubuntu:16.04 sh -c 'echo "Input website: "; read website; echo "Searching.."; sleep 1; curl http://$website;' 
+Input website: 
+helsinki.fi
+Searching..
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
+</body></html>
+
+
+
+
+

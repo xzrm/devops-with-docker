@@ -1,0 +1,57 @@
+version: '3'
+services:
+  nginx: 
+    image: nginx:latest
+    container_name: nginx_container
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+    depends_on: 
+      - backend-app
+      - frontend-app
+
+  redis:
+    image: redis
+    
+  database:
+    image: postgres
+    environment:
+      - POSTGRES_USER=user1
+      - POSTGRES_PASSWORD=password123
+  backend-app:
+    image: node-app-back
+    expose:
+      - '8000'
+    ports:
+      - '8000:8000'
+    environment:
+      - REDIS=redis
+      - REDIS_PORT=6379
+      - MY_VAR=1234567 #for testing 
+      - 'FRONT_URL=http://localhost:5000'
+
+      - DB_USERNAME=user1
+      - DB_PASSWORD=password123
+      - DB_HOST=database
+    restart: unless-stopped
+    depends_on: 
+      - redis
+      - database
+
+  frontend-app:
+    image: node-app-front
+    expose:
+      - '5000'
+    ports:
+      - '5000:5000'
+    volumes:
+      - 'database-data:/var/lib/postgresql/data/'
+    environment:
+      # - 'API_URL=http://localhost:8000'
+      - API_URL=/api/
+
+
+
+volumes:
+  database-data: 

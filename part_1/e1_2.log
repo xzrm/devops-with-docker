@@ -1,0 +1,25 @@
+Script started on 2020-05-24 13:21:30+0200
+]0;maciej@maciej-ubuntu: ~[01;32mmaciej@maciej-ubuntu[00m:[01;34m~[00m$ docker stop [K[K[K[K[K[K[K[K[K[K[K[Kdocker l[Kcontainer ls
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
+8765c272cdef        nginx               "nginx -g 'daemon of…"   14 minutes ago      Up 14 minutes       80/tcp              quirky_moore
+]0;maciej@maciej-ubuntu: ~[01;32mmaciej@maciej-ubuntu[00m:[01;34m~[00m$ docker stop quirky_moore
+quirky_moore
+]0;maciej@maciej-ubuntu: ~[01;32mmaciej@maciej-ubuntu[00m:[01;34m~[00m$ docker rm quirky_mor[Kore
+quirky_moore
+]0;maciej@maciej-ubuntu: ~[01;32mmaciej@maciej-ubuntu[00m:[01;34m~[00m$ docker rm quirky_moore[2@stop[C[C[C[C[C[C[C[C[C[C[C[C[C[5Pcontainer lsrm busy_wright[2@stop[C[C[C[C[C[C[C[C[C[C[C[C[2Prm[C[C[C[C[C[C[C[C[C[C[C[C[2Pcontainer lsstop quirky_moore[5Pcontainer ls
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+]0;maciej@maciej-ubuntu: ~[01;32mmaciej@maciej-ubuntu[00m:[01;34m~[00m$ docker images[Ks
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+nginx               latest              9beeba249f3e        8 days ago          127MB
+]0;maciej@maciej-ubuntu: ~[01;32mmaciej@maciej-ubuntu[00m:[01;34m~[00m$ docker i[Krmi n[Kn[Knginx
+Untagged: nginx:latest
+Untagged: nginx@sha256:30dfa439718a17baafefadf16c5e7c9d0a1cde97b4fd84f63b69e13513be7097
+Deleted: sha256:9beeba249f3ee158d3e495a6ac25c5667ae2de8a43ac2a8bfd2bf687a58c06c9
+Deleted: sha256:8fb6373b4cca3383756d7fd7843dd92f95827e5f2913609e09a9621dcddb3752
+Deleted: sha256:8b09841626797a03a9fe5e73aa38aeacf9ff0ce85a3004236ff35234eec3b35c
+Deleted: sha256:ffc9b21953f4cd7956cdf532a5db04ff0a2daa7475ad796f1bad58cfbaf77a07
+]0;maciej@maciej-ubuntu: ~[01;32mmaciej@maciej-ubuntu[00m:[01;34m~[00m$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+]0;maciej@maciej-ubuntu: ~[01;32mmaciej@maciej-ubuntu[00m:[01;34m~[00m$ quit[K[K[K[Kexit
+
+Script done on 2020-05-24 13:24:27+0200
